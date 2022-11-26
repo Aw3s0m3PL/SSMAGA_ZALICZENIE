@@ -1,0 +1,103 @@
+﻿@font-face {
+    font-family: logoFont;
+    src: url("../fonts/HolidayFree.otf");
+}
+
+body, html {
+    width: 100%;
+    height: auto;
+    position: fixed;
+}
+
+body {
+    background-image: url("../img/bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    position: relative;
+    left: 16%;
+    top: 30px;
+    height: 80px;
+    width: 60%;
+
+}
+
+header h1 {
+    font-family: logoFont;
+    position: relative;
+    top: -65%;
+    left: 12%;
+}
+
+.box {
+    position: relative;
+    padding-left: 15%;
+    margin-left: 15%;
+    width: 10%;
+    height: auto;
+    min-height: 100vh;
+}
+
+.menu {
+    position: relative;
+    top: -35%;
+    left: 25%;
+}
+
+.menu ul {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu li a {
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+    width: 130px;
+    text-decoration: none;
+    color: black;
+    background-color: darkgray;
+    padding: 10px 15px;
+    box-shadow: 0px 2px 3px gray;
+    -moz-box-shadow: 0px 2px 3px gray;
+    -webkit-box-shadow: 0px 2px 3px gray;
+}
+
+.menu li a:hover {
+    color: white;
+    background: gray;
+}
+
+.kontener {
+    width: 50%;
+    height: auto;
+    background-color: darkgray;
+    position: relative;
+    top: 10%;
+    left: -25%;
+    bottom: 50%;
+    padding-bottom: 2.5rem;
+    box-shadow: 0px 2px 3px gray;
+    -moz-box-shadow: 0px 2px 3px gray;
+    -webkit-box-shadow: 0px 2px 3px gray;
+}
+
+.stopka {
+    position: fixed;
+    left: 16.25%;
+    bottom: 0;
+    width: 66%;
+    height: 2.5rem;
+    color: white;
+    background-color: darkgray;
+    text-align: center;
+    box-shadow: 0px 2px 3px gray;
+    -moz-box-shadow: 0px 2px 3px gray;
+    -webkit-box-shadow: 0px 2px 3px gray;
+}
