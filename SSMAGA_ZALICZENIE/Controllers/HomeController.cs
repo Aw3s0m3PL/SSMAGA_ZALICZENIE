@@ -14,21 +14,23 @@ namespace SSMAGA_ZALICZENIE.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly CzarterContext _context;
-        private readonly IWebHostEnvironment _env;
 
-        public HomeController(IWebHostEnvironment env, CzarterContext context, ILogger<HomeController> logger)
-        {
-            _env = env;
-            _context = context;
+        public HomeController(ILogger<HomeController> logger)
+        { 
             _logger = logger;
         }
 
         public IActionResult Index()
         {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Oferta()
+        {
             var manager = new CzarterManager();
-            var jachty = manager.PobierzJednostki();
-            return View(jachty);
+            var items = manager.PobierzJednostki();
+            return View(items);
         }
 
         [HttpGet]
@@ -37,6 +39,21 @@ namespace SSMAGA_ZALICZENIE.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Add(OfertaModel item)
+        {
+            var itemManager = new CzarterManager();
+            itemManager.addItem(item);
+            return RedirectToAction("Oferta");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var itemManager = new CzarterManager();
+            var item = itemManager.getItem(id);
+            return View(item);
+        }
 
         public IActionResult ONas()
         {

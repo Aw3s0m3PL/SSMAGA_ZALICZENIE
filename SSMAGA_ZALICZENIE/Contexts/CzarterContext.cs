@@ -36,7 +36,7 @@ namespace SSMAGA_ZALICZENIE.Contexts
         }
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptions)
         {
-            var cs = @"Data Source=AS_E7470;Initial Catalog=CzarterBD;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;MultiSubnetFailover=False";
+            var cs = @"Data Source=AS_E7470;User Id=sa;Password=1Q@2ws3ed;Initial Catalog=CzarterBD;Integrated Security=False;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;MultiSubnetFailover=False";
             dbContextOptions.UseSqlServer(cs);
         }
     }

@@ -18,7 +18,7 @@ namespace SSMAGA_ZALICZENIE.Models
         public int Il_Os { get; set; }
         [Column(TypeName = "text")]
         public string Opis { get; set; }
-        public int Cena { get; set; }
+        public decimal Cena { get; set; }
         [Column(TypeName = "varchar(MAX)")]
         public string Zdjecie { get; set; }
         public ICollection<RezerwacjeModel> Rezerwacje { get; set; }

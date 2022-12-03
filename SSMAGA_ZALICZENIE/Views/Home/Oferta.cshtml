@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SSMAGA_ZALICZENIE.Models.OfertaModel>
+@{
+    ViewData["Title"] = "Oferta";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h1>Nasze jednostki:</h1>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="fot">
+                    <img src="@Html.DisplayFor(modelItem => item.Zdjecie)" />
+                </td>
+                <td>
+                    <div class="title"><h3><a asp-action="Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.Imie)</a></h3></div>
+                    <div class="info">
+                        <ul>
+                            <li>Ilość osób: @Html.DisplayFor(modelItem => item.Il_Os)</li>
+                            <li>@Html.DisplayFor(modelItem => item.Opis)</li>
+                        </ul>
+                        <h4>
+                            @{
+                                decimal cena = item.Cena;
+                                string c = string.Format("{0:n}", @cena);
+                                @c
+                            }
+                            ZŁ/Doba
+                        </h4>
+                    </div>
+                </td>
+                <td>
+                    <div class="admctl">
+                        <ol>
+                            <li><a asp-action="Edit" asp-route-id="@item.ID"><i class="far fa-edit"></i></a></li>
+                            <li><a asp-action="Remove" asp-route-id="@item.ID"><i class="fas fa-trash"></i></a></li>
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

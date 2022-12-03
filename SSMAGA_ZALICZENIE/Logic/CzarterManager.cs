@@ -13,7 +13,7 @@ namespace SSMAGA_ZALICZENIE.Logic
             }
         }
 
-        public CzarterManager dodajJednostke(OfertaModel ofertaModel)
+        public CzarterManager addItem(OfertaModel ofertaModel)
         {
             using (var context = new CzarterContext())
             {
@@ -31,6 +31,15 @@ namespace SSMAGA_ZALICZENIE.Logic
                 }
             }
             return this;
+        }
+
+        public OfertaModel getItem(int id)
+        {
+            using (var context = new CzarterContext())
+            {
+                var item = context.Oferta.SingleOrDefault(x => x.ID == id);
+                return item;
+            }
         }
 
     }

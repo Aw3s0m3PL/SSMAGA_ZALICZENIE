@@ -6,7 +6,6 @@
 body, html {
     width: 100%;
     height: auto;
-    position: fixed;
 }
 
 body {
@@ -17,7 +16,7 @@ body {
 
 header {
     position: relative;
-    left: 16%;
+    left: 21.5%;
     top: 30px;
     height: 80px;
     width: 60%;
@@ -33,9 +32,10 @@ header h1 {
 
 .box {
     position: relative;
-    padding-left: 15%;
-    margin-left: 15%;
-    width: 10%;
+    padding-left: 1%;
+    margin-left: 1%;
+    margin-top: 8%;
+    width: 98%;
     height: auto;
     min-height: 100vh;
 }
@@ -75,24 +75,79 @@ header h1 {
 }
 
 .kontener {
-    width: 50%;
-    height: auto;
+    margin-left: 9.7%;
+    margin-bottom: 5%;
+    width: 80%;
     background-color: darkgray;
-    position: relative;
-    top: 10%;
-    left: -25%;
-    bottom: 50%;
     padding-bottom: 2.5rem;
     box-shadow: 0px 2px 3px gray;
     -moz-box-shadow: 0px 2px 3px gray;
     -webkit-box-shadow: 0px 2px 3px gray;
 }
 
+.kontener h1 {
+    font-size: 25px;
+}
+
+.kontener .table {
+    margin: 0;
+    width: 100%;
+}
+
+.kontener td, th {
+    border: none;
+}
+
+.kontener .fot {
+    width: 500px;
+    height: 250px;
+    margin: 0;
+}
+
+.kontener img {
+    width: 500px;
+    height: 250px;
+}
+
+.kontener .title a {
+    color: black;
+}
+
+.kontener .title a:hover {
+    color: white;
+    background-color: gray;
+    text-decoration: none;
+}
+
+.kontener .info ul {
+    margin-left: 12px;
+    padding-left: 12px;
+}
+
+.kontener .info h4 {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.kontener .admctl a {
+    font-size: 20px;
+    color: gray;
+}
+
+.kontener .admctl ol {
+    list-style-type: none;
+    text-align: right;
+}
+
+.kontener .admctl li {
+    margin-bottom: 10px;
+}
+
 .stopka {
-    position: fixed;
-    left: 16.25%;
+    position: absolute;
+    left: 10.5%;
     bottom: 0;
-    width: 66%;
+    width: 79.4%;
     height: 2.5rem;
     color: white;
     background-color: darkgray;
