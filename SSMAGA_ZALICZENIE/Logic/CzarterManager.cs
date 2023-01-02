@@ -42,5 +42,43 @@ namespace SSMAGA_ZALICZENIE.Logic
             }
         }
 
+        public CzarterManager updateItem(OfertaModel ofertaModel)
+        {
+            using (var context = new CzarterContext())
+            {
+                context.Update(ofertaModel);
+
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    context.Update(ofertaModel);
+                    context.SaveChanges();
+                }
+            }
+            return this;
+        }
+
+        public CzarterManager removeItem(int id)
+        {
+            using (var context = new CzarterContext())
+            {
+                var auto = context.Oferta.SingleOrDefault(x => x.ID == id);
+                context.Remove(auto);
+
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    context.Remove(auto);
+                    context.SaveChanges();
+                }
+            }
+            return this;
+        }
     }
 }

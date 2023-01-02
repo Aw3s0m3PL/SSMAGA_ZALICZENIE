@@ -1,0 +1,53 @@
+﻿@model SSMAGA_ZALICZENIE.Models.OfertaModel
+
+@{
+    ViewData["Title"] = "Panel Administratora";
+}
+
+<style>
+    .bottom {
+    }
+
+        .bottom a {
+            font-size: 30px;
+            color: gray;
+        }
+
+        .bottom table {
+            width: 100%;
+        }
+
+        .bottom td {
+            width: 50%;
+        }
+
+    img {
+        width: 50%;
+        height: 50%;
+    }
+
+    form {
+        padding-left: 100%;
+    }
+
+</style>
+
+<h1>Usuwanie ogłoszenia</h1>
+
+<h2>Czy jesteś pewien że chcesz usunąć poniższą ofertę?</h2>
+<h3>@Html.DisplayFor(model => model.Imie)</h3>
+<img src="@Html.DisplayFor(model => model.Zdjecie)" />
+
+<div class="bottom">
+    <table>
+        <tr>
+            <td><a asp-action="Index"><i class="fas fa-angle-double-left"></i></a></td>
+            <td>
+                <form asp-action="View">
+                    <input type="hidden" asp-for="ID" />
+                    <input type="submit" value="Usuń" class="btn btn-danger" />
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>

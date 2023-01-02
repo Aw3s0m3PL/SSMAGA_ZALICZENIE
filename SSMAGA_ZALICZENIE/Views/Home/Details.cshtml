@@ -1,0 +1,27 @@
+﻿@model SSMAGA_ZALICZENIE.Models.OfertaModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    ul {
+        list-style-type: none;
+    }
+</style>
+
+<h1>@Html.DisplayFor(model => model.Imie)</h1>
+<table style="width:100%">
+<tr>
+    <td><img width=120 height=120 src="@Html.DisplayFor(model => model.Zdjecie)"/></td>
+    <td>
+        <ul>
+            <li>Ilość osób: @Html.DisplayFor(model => model.Il_Os)</li>
+            <li>Opis:<br />@Html.DisplayFor(model => model.Opis)</li>
+        </ul>
+    </td>
+    <td>
+        Kaledarzyk?
+    </td>
+</tr>
+</table>

@@ -26,6 +26,14 @@ namespace SSMAGA_ZALICZENIE.Controllers
         }
 
         [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var itemManager = new CzarterManager();
+            var item = itemManager.getItem(id);
+            return View(item);
+        }
+
+        [HttpGet]
         public IActionResult Oferta()
         {
             var manager = new CzarterManager();
@@ -53,6 +61,40 @@ namespace SSMAGA_ZALICZENIE.Controllers
             var itemManager = new CzarterManager();
             var item = itemManager.getItem(id);
             return View(item);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(OfertaModel ofertaModel)
+        {
+            var itemManager = new CzarterManager();
+            itemManager.updateItem(ofertaModel);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Remove(int id)
+        {
+            var itemManager = new CzarterManager();
+            var item = itemManager.getItem(id);
+            return View(item);
+        }
+
+        [HttpPost]
+        public IActionResult RemoveConfirm(int id)
+        {
+            var itemManager = new CzarterManager();
+
+            try
+            {
+                var car = itemManager.getItem(id);
+                itemManager.removeItem(car.ID);
+                return RedirectToAction("Index");
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+
         }
 
         public IActionResult ONas()
