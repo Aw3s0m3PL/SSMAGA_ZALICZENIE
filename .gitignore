@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/SSMAGA_ZALICZENIE/wwwroot/css/vanilla-calendar.min.css
+/SSMAGA_ZALICZENIE/wwwroot/js/vanilla-calendar.min.js
